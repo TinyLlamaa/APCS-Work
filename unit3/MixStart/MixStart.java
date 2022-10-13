@@ -2,9 +2,9 @@ public class MixStart{
 
   public static void main(String[] args){
 
-    System.out.println(testMixStart("mix snacks", true));
-    System.out.println(testMixStart("mi", false));
-    System.out.println(testMixStart("piz snacks", false));
+    testMixStart("mix snacks", true);
+    testMixStart("mi", false);
+    testMixStart("piz snacks", false);
 
   }
 
@@ -20,7 +20,14 @@ public class MixStart{
 }
 
 
-  public static boolean testMixStart(String str, boolean expected){
-    return(mixStart(str) == expected);
+  public static void testMixStart(String str, boolean expected){
+
+    System.out.println("str: " + str);
+    System.out.println("returned: " + mixStart(str));
+    System.out.println("expected: " + expected);
+    if(mixStart(str) == expected){
+      System.out.println("passed");
+    }
+
   }
 }

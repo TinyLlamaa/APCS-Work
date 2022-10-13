@@ -2,22 +2,22 @@ public class Functions{
 
   public static void main(String[] args){
 
-    System.out.println(testSumOfSquares(1, 1));
-    System.out.println(testSumOfSquares(2, 5));
-    System.out.println(testSumOfSquares(3, 14));
+    testSumOfSquares(1, 1);
+    testSumOfSquares(2, 5);
+    testSumOfSquares(3, 14);
 
-    System.out.println(testCountOccurences("Mississippi", "iss", 2));
-    System.out.println(testCountOccurences("banananana", "na", 4));
+    testCountOccurences("Mississippi", "iss", 2);
+    testCountOccurences("banananana", "na", 4);
 
-    System.out.println(testReverse("bad", "dab"));
-    System.out.println(testReverse("Hello, world!", "!dlrow ,olleH"));
-    System.out.println(testReverse("tacocat", "tacocat"));
+    testReverse("bad", "dab");
+    testReverse("Hello, world!", "!dlrow ,olleH");
+    testReverse("tacocat", "tacocat");
 
-    System.out.println(testFactorials(1, 1));
-    System.out.println(testFactorials(2, 2));
-    System.out.println(testFactorials(3, 6));
-    System.out.println(testFactorials(4, 24));
-    System.out.println(testFactorials(5, 120));
+    testFactorials(1, 1);
+    testFactorials(2, 2);
+    testFactorials(3, 6);
+    testFactorials(4, 24);
+    testFactorials(5, 120);
 
   }
 
@@ -31,8 +31,14 @@ public class Functions{
     return(result);
   }
 
-  public static boolean testSumOfSquares(int n, int expected){
-    return(sumOfSquares(n) == expected);
+  public static void testSumOfSquares(int n, int expected){
+    System.out.println("testSumOfSquares");
+    System.out.println("n: " + n);
+    System.out.println("returned: " + sumOfSquares(n));
+    System.out.println("expected: " + expected);
+    if(sumOfSquares(n) == expected){
+      System.out.println("passed");
+    }
   }
 
   public static int countOccurrences(String a, String sub){
@@ -48,8 +54,15 @@ public class Functions{
     return count;
   }
 
-  public static boolean testCountOccurences(String a, String sub, int expected){
-    return(countOccurrences(a, sub) == expected);
+  public static void testCountOccurences(String a, String sub, int expected){
+    System.out.println("testCountOccurences");
+    System.out.println("a: " + a);
+    System.out.println("sub: " + sub);
+    System.out.println("returned: " + countOccurrences(a, sub));
+    System.out.println("expected: " + expected);
+    if(countOccurrences(a, sub) == expected){
+      System.out.println("passed");
+    }
   }
 
   public static String reverse(String start){
@@ -62,8 +75,14 @@ public class Functions{
     return result;
   }
 
-  public static boolean testReverse(String start, String expected){
-    return(reverse(start).equals(expected));
+  public static void testReverse(String start, String expected){
+    System.out.println("testReverse");
+    System.out.println("start: " + start);
+    System.out.println("returned: " + reverse(start));
+    System.out.println("expected: " + expected);
+    if(reverse(start).equals(expected)){
+      System.out.println("passed");
+    }
   }
 
   public static int factorials(int n){
@@ -77,8 +96,14 @@ public class Functions{
     return factorial;
   }
 
-  public static boolean testFactorials(int n, int expected){
-    return(factorials(n) == expected);
+  public static void testFactorials(int n, int expected){
+    System.out.println("testFactorials");
+    System.out.println("n: " + n);
+    System.out.println("returned: " + factorials(n));
+    System.out.println("expected: " + expected);
+    if(factorials(n) == expected){
+      System.out.println("passed");
+    }
   }
 
 

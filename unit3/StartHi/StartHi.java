@@ -2,9 +2,9 @@ public class StartHi{
 
   public static void main(String[] args){
 
-    System.out.println(testStartHi("hi there", true));
-    System.out.println(testStartHi("h", false));
-    System.out.println(testStartHi("hello hi", false));
+    testStartHi("hi there", true);
+    testStartHi("h", false);
+    testStartHi("hello hi", false);
 
   }
 
@@ -25,7 +25,12 @@ public class StartHi{
 }
 
 
-  public static boolean testStartHi(String str, boolean expected){
-    return(startHi(str) == expected);
+  public static void testStartHi(String str, boolean expected){
+    System.out.println("str: " + str);
+    System.out.println("returned: " + startHi(str));
+    System.out.println("expected: " + expected);
+    if(startHi(str) == (expected)){
+      System.out.println("passing");
+    }
   }
 }

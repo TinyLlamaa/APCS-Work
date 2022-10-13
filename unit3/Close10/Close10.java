@@ -2,9 +2,9 @@ public class Close10{
 
   public static void main(String[] args){
 
-    System.out.println(testClose10(8, 13, 8));
-    System.out.println(testClose10(13, 7, 0));
-    System.out.println(testClose10(13, 9, 9));
+    testClose10(8, 13, 8);
+    testClose10(13, 7, 0);
+    testClose10(13, 9, 9);
 
   }
 
@@ -19,9 +19,16 @@ public class Close10{
 
   }
 
-  public static boolean testClose10(int a, int b, int expected){
+  public static void testClose10(int a, int b, int expected){
 
-    return(Close10(a, b) == expected);
+    System.out.println("a: " + a);
+    System.out.println("b: " + b);
+    System.out.println("returned: " + Close10(a, b));
+    System.out.println("expected: " + expected);
+
+    if(Close10(a, b) == expected){
+      System.out.println("passed");
+    }
 
   }
 }
