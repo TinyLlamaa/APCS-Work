@@ -1,9 +1,9 @@
 public class frontTimes{
 
   public static void main(String[] args){
-    System.out.println(testFrontTimes("Chocolate", 3, "ChoChoCho"));
-    System.out.println(testFrontTimes("Chocolate", 2, "ChoCho"));
-    System.out.println(testFrontTimes("Ab", 3, "AbAbAb"));
+    testFrontTimes("Chocolate", 3, "ChoChoCho");
+    testFrontTimes("Chocolate", 2, "ChoCho");
+    testFrontTimes("Ab", 3, "AbAbAb");
 
   }
 
@@ -22,7 +22,13 @@ public class frontTimes{
   return result;
   }
 
-  public static boolean testFrontTimes(String str, int n, String expected){
-    return(frontTimes(str, n).equals(expected));
+  public static void testFrontTimes(String str, int n, String expected){
+    System.out.println("str: " + str);
+    System.out.println("n: " + n);
+    System.out.println("result: " + frontTimes(str, n));
+    System.out.println("expected: " + expected);
+    if(frontTimes(str, n).equals(expected)){
+      System.out.println("passed!");
+    }
   }
 }

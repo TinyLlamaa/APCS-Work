@@ -1,9 +1,9 @@
 public class stringTimes{
 
   public static void main(String[] args){
-    System.out.println(stringTimesTest("Hi", 2, "HiHi"));
-    System.out.println(stringTimesTest("Hi", 4, "HiHiHiHi"));
-    System.out.println(stringTimesTest("Hi", 1, "Hi"));
+    stringTimesTest("Hi", 2, "HiHi");
+    stringTimesTest("Hi", 4, "HiHiHiHi");
+    stringTimesTest("Hi", 1, "Hi");
   }
 
   public static String stringTimes(String str, int n){
@@ -15,7 +15,13 @@ public class stringTimes{
     return result;
   }
 
-  public static boolean stringTimesTest(String str, int n, String expected){
-    return(stringTimes(str, n).equals(expected));
+  public static void stringTimesTest(String str, int n, String expected){
+    System.out.println("str: " + str);
+    System.out.println("n: " + n);
+    System.out.println("result: " + stringTimes(str, n));
+    System.out.println("expected: " + expected);
+    if(stringTimes(str, n).equals(expected)){
+      System.out.println("passed!");
+    }
   }
 }
