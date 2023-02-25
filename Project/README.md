@@ -3,9 +3,9 @@ CONCEPT:
 -
 
 TASK LIST:
--camera panning
--title screen/game states
+-camera panning x
+-title screen/game states x
 -cute blender stuff (not very cute)
 
 TODO LIST:
--
+-Add more obstacles and object detection

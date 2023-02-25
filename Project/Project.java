@@ -3,8 +3,8 @@ import java.util.*;
 
 public class Project extends PApplet{
 
-  public float x = (height/2) / tan(PI/6);
-  public float y = 0;
+  private ArrayList<Scene> scenes = new ArrayList<Scene>();
+  private int current = 0;
 
   public void settings(){
     size(displayWidth, displayHeight, P3D);
@@ -12,39 +12,39 @@ public class Project extends PApplet{
 
   public void setup(){
 
+    scenes.add(new StartScene(this));
+    scenes.add(new GameScene(this));
+
   }
 
   public void draw(){
-    background(0);
-    lights();
 
-    camera(mouseX, height/2, x, width/2, height/2, 0, 0, 1, 0);
+    scenes.get(current).display();
 
-    //circle indicating camera
-    ellipse(mouseX, height/2, 10, 10);
-
-    //cute box
-    pushMatrix();
-    translate(width/2, height/2, 0);
-    noStroke();
-    box(100);
-    popMatrix();
   }
 
   public void keyPressed(){
 
-    if(keyCode == 40){
-      y = 10;
-    } else if(keyCode == 38){
-      y = -10;
-    } else {
-      y = 0;
-    }
+    scenes.get(current).ifKeyPressed();
 
   }
 
+  public void mouseClicked(){
+
+    scenes.get(current).ifMouseClicked();
+
+    if(current == 0){
+      current++;
+      if(current >= scenes.size()){
+          current = 0;
+        }
+      }
+  }
+
   public void keyReleased(){
-    y = 0;
+
+    scenes.get(current).ifKeyReleased();
+
   }
 
   public static void main(String[] args) {

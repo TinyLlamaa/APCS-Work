@@ -4,7 +4,7 @@ public class Rectangle{
   private double width;
   private double height;
 
-  Rectangle(String name, double width, double height){
+  public Rectangle(String name, double width, double height){
     this.name = name;
     this.width = width;
     this.height = height;
