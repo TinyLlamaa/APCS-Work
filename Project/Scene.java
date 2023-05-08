@@ -1,8 +1,8 @@
-public interface Scene{
+import processing.core.*;
 
-public void display();
-public void ifKeyPressed();
-public void ifKeyReleased();
-public void ifMouseClicked();
+public interface Scene
+{
+    public void display();
+    public void handleKeyPressed();
 
 }
